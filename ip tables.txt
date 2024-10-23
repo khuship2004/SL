@@ -1,0 +1,25 @@
+ip tables 
+
+block all traffic 
+sudo iptables -A INPUT -j DROP
+accept all icmp traffic
+sudo iptables -A INPUT -p icmp -j ACCEPT
+accept loopback
+sudo iptables -I INPUT 1 -i lo -j ACCEPT
+
+accepting traffic on port based
+sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+blocking traffic 
+sudo iptables -A INPUT -p icmp -j DROP
+sudo iptables -A INPUT -p tcp -j DROP (doesn't allow to surf net)
+
+from specific source
+sudo iptables -A INPUT -s 192.168.92.17 -p icmp -j DROP
+
+
+restrict outgoing traffic
+sudo iptables -A OUTPUT -p icmp -j DROP
+
+

@@ -1,0 +1,54 @@
+nmap
+
+TCP Connect Scan:
+- Command: `nmap -sT target_ip`
+nmap -sT tsec.edu
+
+TCP SYN Scan:
+- Command: `nmap -sS target_ip`
+nmap -sS tsec.edu
+
+
+FIN Scan:
+- Command: `nmap -sF target_ip`
+
+
+Null Scan:
+- Command: `nmap -sN target_ip`
+nmap -sN tsec.edu 
+
+ACK Scan:
+Command: `nmap -sA target_ip`
+
+XMAS Scan:
+- Command: `nmap -sX target_ip`
+nmap -sX tsec.edu
+
+Ping Sweep:
+- Command: `nmap -sn target_subnet`
+
+
+Service and Version Detection:
+- Command: `nmap -sV target_ip`
+
+Port and Port Range Scanning:
+- Command: `nmap -p port(s) target_ip`
+
+OS Fingerprinting:
+- Command: `nmap -O target_ip` here 
+nmap -O tsec.edu
+
+
+scan open ports 
+nmap ip address
+
+udp scan
+nmap -sU tsec.edu
+
+nmap -sO tsec.edu
+
+
+
+
+
+

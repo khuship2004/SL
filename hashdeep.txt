@@ -1,0 +1,38 @@
+hashdeep
+
+create some files
+
+md5deep *.txt>hashset.txt
+hashdeep *.txt>hashtext1.txt
+
+now check matching mode
+md5deep -m hashset.txt *
+hashdeep -m -k hashset1.txt *
+
+now make changes to some files and check negative matching mode 
+Md5deep -s -x hashset.txt *
+hashdeep -s -x hashset1.txt *
+
+
+auditing 
+
+create a folder and one separate file 
+hashdeep -c md5,sha1,sha256 -r /home/shachi/myfiles>hashset1.txt
+hashdeep -a -r -k hashset1.txt /home/shachi/myfiles
+
+
+add new file 
+touch /home/shachi/myfiles/newfile.txt
+hashdeep -a -r -k hashset1.txt /home/shachi/myfiles
+
+
+verbose 
+hashdeep -v -a -r -k hashset1.txt /home/shachi/myfiles
+
+Move one of the files to another directory
+mv /home/shachi/myfiles/example.txt /tmp
+hashdeep -v -a -r -k hashset1.txt /home/shachi/myfiles
+
+Rename one of the files 
+mv /home/shachi/myfiles/shachi.txt /home/shachi/myfiles/shachi.bak
+hashdeep -v -a -r -k hashset1.txt /home/shachi/myfiles

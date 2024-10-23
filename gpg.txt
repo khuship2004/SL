@@ -1,0 +1,26 @@
+gpg
+
+at 2 terminals 
+gpg --gen-key
+
+create 4 files 2public keys 2 private keys 
+gpg --export -a username>filename  (for public)
+gpg --export-secret-key -a username>filename (for private)
+
+on receiver
+gpg --fingerprint receiver’s_email
+
+on sender 
+gpg --import filename_containing_public_key_of_receiver
+
+on both
+gpg --list-keys
+
+
+create a file that is to be sent add data to it 
+
+on sender 
+gpg --encrypt -r receiver_email name_of_file 
+
+on receiver
+gpg -o myfiledecrypted -d myfile.txt.gpg

@@ -1,0 +1,39 @@
+tcpdump & wireshark
+
+sudo tcpdump 
+sudo tcpdump -n 
+sudo tcpdump -v
+
+specific protocol
+sudo tcpdump -n tcp
+
+specific host or port 
+sudo tcpdump -n src 172.16.92.1
+sudo tcpdump -n dst 172.16.92.1
+sudo tcpdump -n port 80
+sudo tcpdump port 80
+
+
+sudo tcpdump udp and port 53
+
+port range 
+sudo tcpdump -n portrange 1-80
+
+src and dest
+sudo tcpdump src ipaddress and dst port 443
+
+
+tcpdump -nnvvS src 192.168.0.182 and dst port 443
+-n: Prevents tcpdump from resolving hostnames, showing IP addresses instead of domain names.
+-nn: Additionally prevents tcpdump from resolving service names, showing port numbers instead of service names.
+-v: Increases the verbosity of the output.
+-vv: Further increases verbosity, giving even more details (e.g., TTL, total length).
+-S: Shows absolute TCP sequence numbers (without relative sequence number translation).
+
+
+wireshark 
+ip.dst == 193.168.0.104 && tcp.srcport>=0 && tcp.srcport<=5000
+ip.src == 192.168.0.104
+tcp.srcport == 443
+udp.dstport == 443
+
